@@ -1,0 +1,45 @@
+class Usuario {
+   
+    constructor (nombre, apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.libros= [];
+        this.mascotas=[];
+    }
+
+
+
+    getFullName() {
+    return console.log(${this.nombre} ${this.apellido});
+    }
+    addMascotas(mascotas) {
+    this.mascotas.push(mascotas)
+    } 
+    countMascotas() {
+    return this.mascotas.length;
+
+    }
+    addBook (nombre, autor){
+    const libro = {
+        nombre: nombre;
+        autor: autor;
+    }
+    this.libros.push(libro);
+    }
+    getBookName() {
+    let arrayLibros =[]
+    this.libros.forEach((e) => arrayLibros.push(e.nombre, e.autor));
+    }
+
+}
+
+const UsuarioA = new Usuario ("Carlos", "Castro");
+
+console.log(UsuarioA.getFullName());
+UsuarioA.addMascotas("perro");
+UsuarioA.addMascotas("gato");
+console.log(UsuarioA.countMascotas());
+UsuarioA.addBook("Comida sana" , "Pepe Grillo");
+UsuarioA.addBook("inteligencia", "Daniel Goleman");
+
+console.log(UsuarioA.getBookName());
